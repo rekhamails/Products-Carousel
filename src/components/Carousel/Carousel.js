@@ -10,6 +10,7 @@ const Carousel = () => {
     const nextSlide = () => {
         console.log("count in next slide : ",count)
         setProducts(data.products.slice(count, count+3));
+
         setCount(count+3);
     }
 
@@ -20,16 +21,17 @@ const Carousel = () => {
         setCount(count-3);
     }
 
+
     return (
         <div className="carousel">
-            <p>{count} {data.products.length}</p>
             <div className="carousel-container">
                 {products.map(product => {
                     return (
                         <div key={product._id} className="card">
                             <img className="medium" src={product.image} alt={product.name}/>
                             <div className="card-body">
-                                 <h2>{product.name}</h2>
+                                 <h2>{product.name}</h2> 
+                                 <p>{product.category}</p>
                                 <div className="price">${product.price}</div>
                             </div>
                          </div>  
