@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useCallback} from "react";
 import data from "../../data";
 
 const getItemsToDisplay = (currentIndex) => {
-  const { products } = data;
+  const  { products } = data;
   const lastIndex = products.length - 1;
   const prevItem = products[currentIndex === 0 ? lastIndex : currentIndex - 1];
   const currentItem = products[currentIndex];
@@ -13,6 +13,7 @@ const getItemsToDisplay = (currentIndex) => {
 const useCarouselHook = () => {
   const [currentItemIndex, setCurrentIndex] = useState(0);
   const [products, setProducts] = useState(getItemsToDisplay(0));
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   const prevSlide = () => {
     const lastIndex = data.products.length - 1;
@@ -31,10 +32,19 @@ const useCarouselHook = () => {
     setCurrentIndex(index);
   };
 
+  const filterProducts = useCallback((filteredCategories) => {
+    console.log("Categories : ",filteredCategories);
+     let filteredProductsCategory = filteredCategories.length === 0 ? products : data.products.filter(product => filteredCategories.includes(product.category));
+     console.log('filteredProducts : ', filteredProductsCategory);
+     setFilteredProducts(filteredProductsCategory);
+    // setProducts(getItemsToDisplay(filteredProducts, 0));
+  }, [products]) 
+
   return {
     products,
     nextSlide,
     prevSlide,
+    filterProducts
   };
 };
 

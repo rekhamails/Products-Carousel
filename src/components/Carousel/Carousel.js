@@ -7,7 +7,7 @@ const Carousel = () => {
   const { products, nextSlide, prevSlide } = useCarouselHook();
   return (
     <React.Fragment>
-    <Search  />
+    <Search />
     <div className="carousel">
     
       <i id="chevron-arrow-left" onClick={prevSlide} />
