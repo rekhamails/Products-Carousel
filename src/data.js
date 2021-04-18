@@ -44,41 +44,27 @@ const data = {
         },
         {
             _id: '7',
-            name: 'Women of the Bible Speak',
-            category: 'Books',
-            image: '/images/Books1.jpg',
-            price: 30
-        },
-        {
-            _id: '8',
-            name: 'Rich Dad Poor Dad',
-            category: 'Books',
-            image: '/images/Books2.jpg',
-            price: 12
-        },
-        {
-            _id: '9',
             name: 'Tombik Sandals',
             category: 'Shoes',
             image: '/images/Shoes1.jpg',
             price: 23
         },
         {
-            _id: '10',
+            _id: '8',
             name: 'Troadlop Kids Sneaker',
             category: 'Shoes',
             image: '/images/Shoes2.jpg',
             price: 65
         },
         {
-            _id: '11',
+            _id: '9',
             name: 'COODO Sports Sneakers',
             category: 'Shoes',
             image: '/images/Shoes3.jpg',
             price: 28
         },
         {
-            _id: '12',
+            _id: '10',
             name: 'Nuby Ice Gel Teether Keys',
             category: 'Toys',
             image: '/images/Toys.jpg',
